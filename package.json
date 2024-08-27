@@ -1,0 +1,13 @@
+{
+  "name": "wallgeram",
+  "devDependencies": {
+    "turbo": "^2.0.14"
+  },
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "packageManager": "npm@10.8.2",
+  "workspaces": [
+    "apps/*"
+  ]
+}
