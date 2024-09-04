@@ -10,6 +10,10 @@ export class UsersService {
     @InjectRepository(User) private usersRepository: Repository<User>,
   ) {}
 
+  findAll() {
+    return this.usersRepository.find();
+  }
+
   createUser(userData: CreateUserParams) {
     const newUser = this.usersRepository.create({ ...userData });
     return this.usersRepository.save(newUser);
