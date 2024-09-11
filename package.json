@@ -1,6 +1,7 @@
 {
   "name": "wallgeram",
   "devDependencies": {
+    "@types/passport-jwt": "^4.0.1",
     "turbo": "^2.0.14"
   },
   "scripts": {
@@ -9,5 +10,12 @@
   "packageManager": "npm@10.8.2",
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "dependencies": {
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/passport": "^10.0.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0"
+  }
 }

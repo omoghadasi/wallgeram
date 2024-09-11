@@ -17,10 +17,7 @@ export class UsersService {
 
   findByUsername(username: string) {
     const user = this.usersRepository.findOneBy({ username });
-    if (!user) {
-      throw new HttpException('User not found', HttpStatus.BAD_REQUEST);
-    }
-    return user;
+    return user ? user : null;
   }
 
   createUser(userData: CreateUserParams) {
