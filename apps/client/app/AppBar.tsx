@@ -6,26 +6,26 @@ function AppBar() {
   const { data: session } = useSession();
 
   return (
-    <div className="flex flex-row align-middle">
-      {session?.user ? (
-        <>
-          <button
-            className="bg-red-500 text-white p-4"
-            onClick={() => signOut()}
-          >
-            sign Out
+    <div className="navbar bg-primary text-primary-content">
+      <div className="navbar-start">
+        <a className="btn btn-ghost text-xl">wallgeram</a>
+      </div>
+      <div className="navbar-center hidden lg:flex"></div>
+      <div className="navbar-end">
+        {session?.user ? (
+          <>
+            <span className="px-4">{session.user.email}</span>
+
+            <button className="btn btn-secondary" onClick={() => signOut()}>
+              sign Out
+            </button>
+          </>
+        ) : (
+          <button className="btn" onClick={() => signIn()}>
+            sign in
           </button>
-          <br />
-          <span>{session.user.email}</span>
-        </>
-      ) : (
-        <button
-          className="bg-green-500 text-white p-4"
-          onClick={() => signIn()}
-        >
-          sign in
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 }
