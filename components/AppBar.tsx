@@ -12,7 +12,7 @@ function AppBar() {
         <Link href={"/"} className="btn btn-ghost text-xl">
           wallgeram
         </Link>
-        <Link href={"/dashboard"}>dashboard</Link>
+        {session?.user ? <Link href={"/dashboard"}>dashboard</Link> : <></>}
       </div>
       <div className="navbar-end">
         {session?.user ? (
