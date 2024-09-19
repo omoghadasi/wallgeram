@@ -1,10 +1,5 @@
-import AppBar from "./AppBar";
+import AppBar from "../../../components/AppBar";
 
 export default function Home() {
-  return (
-    <main>
-      <AppBar />
-      home page
-    </main>
-  );
+  return <div>home page</div>;
 }

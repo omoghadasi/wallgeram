@@ -1,5 +1,6 @@
 "use client";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 import React from "react";
 
 function AppBar() {
@@ -8,13 +9,17 @@ function AppBar() {
   return (
     <div className="navbar bg-primary text-primary-content">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">wallgeram</a>
+        <Link href={"/"} className="btn btn-ghost text-xl">
+          wallgeram
+        </Link>
+        <Link href={"/dashboard"}>dashboard</Link>
       </div>
-      <div className="navbar-center hidden lg:flex"></div>
       <div className="navbar-end">
         {session?.user ? (
           <>
-            <span className="px-4">{session.user.email}</span>
+            <Link href={""} className="px-4">
+              {session.user.username}
+            </Link>
 
             <button className="btn btn-secondary" onClick={() => signOut()}>
               sign Out
